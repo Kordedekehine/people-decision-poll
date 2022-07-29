@@ -28,10 +28,10 @@ public class UserPrincipal implements UserDetails {
 
     private String phoneNumber;
 
-    @JsonIgnore
+
     private String email;
 
-    @JsonIgnore
+
     private String password;
 
     private Collection<? extends GrantedAuthority> authorities;

@@ -1,26 +1,27 @@
 package election.poll.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Data
+@AllArgsConstructor
 public class SignUpRequestDto {
 
-    @NotBlank
+
     private String name;
 
-    @NotBlank
+
     private String username;
 
-    @NotBlank
-    private String phoneNumber;
 
-    @NotBlank
-    @Email
     private String email;
 
-    @NotBlank
+    private String phoneNumber;
+
+
     private String password;
 }
