@@ -11,8 +11,11 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 public class SignUpRequestDto {
 
+    private String firstname;
 
-    private String name;
+    private String lastname;
+
+    private String middlename;
 
 
     private String username;

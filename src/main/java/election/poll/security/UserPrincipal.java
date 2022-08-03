@@ -22,7 +22,12 @@ public class UserPrincipal implements UserDetails {
 
     private Long id;
 
-    private String name;
+    private String firstname;
+
+    private String lastname;
+
+    private String middlename;
+
 
     private String username;
 
@@ -42,7 +47,9 @@ public class UserPrincipal implements UserDetails {
 
         return new UserPrincipal(
                 user.getId(),
-                user.getName(),
+                user.getFirstname(),
+                user.getLastname(),
+                user.getMiddlename(),
                 user.getUsername(),
                 user.getEmail(),
                 user.getPhonenumber(),

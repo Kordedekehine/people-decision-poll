@@ -17,37 +17,43 @@ import java.util.Set;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "users")
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {
+                "username"
+        }),
+        @UniqueConstraint(columnNames = {
+                "email"
+        })
+})
 public class User extends DateAudit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private String name;
+    private String firstname;
 
-    @Column
+    private String lastname;
+
+    private String middlename;
     private String username;
 
-    @Column
     @Email
     private String email;
 
     //yarn them the email bug
-
-    @Column
     private String phonenumber;
 
-    @Column
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
     private Set<Role> roles = new HashSet<>();
 
 
-    public User(String name, String username, String email, String phonenumber, String password) {
-        this.name = name;
+    public User(String firstname, String lastname,String middlename, String username, String email, String phonenumber, String password) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.middlename = middlename;
         this.username = username;
         this.email = email;
         this.phonenumber = phonenumber;
