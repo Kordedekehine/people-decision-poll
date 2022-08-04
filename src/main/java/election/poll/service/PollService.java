@@ -155,8 +155,8 @@ public class PollService {
         });
 
         Instant now = Instant.now();
-        Instant expirationDateTime = now.plus(Duration.ofDays(pollRequest.getPollLength().getDays()))
-                .plus(Duration.ofHours(pollRequest.getPollLength().getHours()));
+        Instant expirationDateTime = now.plus(Duration.ofDays(pollRequest.getPollLength().getDays()));
+              //  .plus(Duration.ofHours(pollRequest.getPollLength().getHours()));
 
         poll.setExpirationDateTime(expirationDateTime);
 
